@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Error from "./Error";
 
 function Formulario(props) {
   //state
@@ -20,6 +21,7 @@ function Formulario(props) {
   return (
     <form onSubmit={agregarGasto}>
       <h2> Agrega tus gastos</h2>
+      {error ? <Error mensaje="Ambos campos son obligatorios" /> : null}
       <div className="campo">
         <label>Nombre del gasto</label>
         <input
