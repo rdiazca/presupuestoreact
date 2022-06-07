@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Pregunta from "./components/Pregunta";
 import Formulario from "./components/Formulario";
+import Listado from "./components/Listado";
 
 function App() {
   //state
@@ -9,6 +10,10 @@ function App() {
   const [gasto, setGasto] = useState({});
   const [gastos, setGastos] = useState([]);
 
+  useEffect(() => {
+    const listadoGastos = [...gastos, gasto];
+    setGastos(listadoGastos);
+  }, []);
   return (
     <div className="App container">
       <header>
@@ -24,7 +29,9 @@ function App() {
               <div className="one-half column">
                 <Formulario setGasto={setGasto} />
               </div>
-              <div className="one-half column"></div>
+              <div className="one-half column">
+                <Listado gastos={gastos} />
+              </div>
             </div>
           )}
         </div>
