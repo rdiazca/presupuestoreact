@@ -3,7 +3,8 @@ import Error from "./Error";
 import shortid from "shortid";
 
 function Formulario(props) {
-  const { setGasto } = props;
+  const { setGasto, setCrearGasto } = props;
+
   //state
   const [nombreGasto, setNombreGasto] = useState("");
   const [cantidadGasto, setCantidadGasto] = useState(0);
@@ -27,6 +28,7 @@ function Formulario(props) {
 
     //pasar gasto al componente principal
     setGasto(gasto);
+    setCrearGasto(true);
 
     //eliminar alerta
     setError(false);

@@ -7,13 +7,18 @@ function App() {
   //state
   const [presupuesto, setPresupuesto] = useState(0);
   const [preguntaPresupuesto, setPreguntaPresupuesto] = useState(true);
+  const [crearGasto, setCrearGasto] = useState(false);
   const [gasto, setGasto] = useState({});
   const [gastos, setGastos] = useState([]);
 
   useEffect(() => {
-    const listadoGastos = [...gastos, gasto];
-    setGastos(listadoGastos);
-  }, []);
+    if (crearGasto) {
+      const listadoGastos = [...gastos, gasto];
+      setGastos(listadoGastos);
+
+      setCrearGasto(false);
+    }
+  }, [crearGasto]);
   return (
     <div className="App container">
       <header>
@@ -27,7 +32,7 @@ function App() {
           ) : (
             <div className="row">
               <div className="one-half column">
-                <Formulario setGasto={setGasto} />
+                <Formulario setGasto={setGasto} setCrearGasto={setCrearGasto} />
               </div>
               <div className="one-half column">
                 <Listado gastos={gastos} />
