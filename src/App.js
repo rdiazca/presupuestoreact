@@ -6,6 +6,9 @@ function App() {
   //state
   const [presupuesto, setPresupuesto] = useState(0);
   const [preguntaPresupuesto, setPreguntaPresupuesto] = useState(true);
+  const [gasto, setGasto] = useState({});
+  const [gastos, setGastos] = useState([]);
+
   return (
     <div className="App container">
       <header>
@@ -19,7 +22,7 @@ function App() {
           ) : (
             <div className="row">
               <div className="one-half column">
-                <Formulario />
+                <Formulario setGasto={setGasto} />
               </div>
               <div className="one-half column"></div>
             </div>
