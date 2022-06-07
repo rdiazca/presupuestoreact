@@ -18,6 +18,10 @@ function App() {
       const listadoGastos = [...gastos, gasto];
       setGastos(listadoGastos);
 
+      //restar presupuesto
+      const presupuestoRestante = restante - gasto.cantidadGasto;
+      setRestante(presupuestoRestante);
+
       setCrearGasto(false);
     }
   }, [crearGasto]);

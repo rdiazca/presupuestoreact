@@ -7,7 +7,7 @@ function Formulario(props) {
 
   //state
   const [nombreGasto, setNombreGasto] = useState("");
-  const [cantidadGasto, setCantidadGasto] = useState(0);
+  const [cantidadGasto, setCantidadGasto] = useState("");
   const [error, setError] = useState(false);
 
   const agregarGasto = (e) => {
