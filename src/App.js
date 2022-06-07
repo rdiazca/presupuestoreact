@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Pregunta from "./components/Pregunta";
+import Formulario from "./components/Formulario";
 
 function App() {
   //state
@@ -18,7 +19,7 @@ function App() {
           ) : (
             <div className="row">
               <div className="one-half column">
-                <p>Formulario aqui</p>
+                <Formulario />
               </div>
               <div className="one-half column"></div>
             </div>
